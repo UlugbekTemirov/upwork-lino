@@ -1,0 +1,5 @@
+
+[[redirects]]
+  from = "/"
+  to = "/profile"
+  status = 301
