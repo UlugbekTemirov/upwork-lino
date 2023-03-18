@@ -9,7 +9,7 @@ function redirectProfiles() {
   profiles.forEach((profile) => {
     profile.addEventListener("click", () => {
       if (!edit) {
-        window.location.href = "/index";
+        window.location.href = "/";
       }
     });
   });
