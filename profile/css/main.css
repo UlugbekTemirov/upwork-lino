@@ -1,0 +1,119 @@
+@import "../../index/style.css";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 50px 0;
+}
+
+.container .profile-header {
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+}
+
+.container .profiles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.container .profiles .profile {
+  width: 200px;
+  padding: 10px;
+  height: 260px;
+  border-radius: 15px;
+  position: relative;
+}
+
+.container .profiles .profile .edit-profile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  z-index: 2;
+}
+
+.container .profiles .profile .edit-profile .icon-pencil {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+}
+
+.container .profiles .profile:hover {
+  background-color: rgba(218, 218, 218, 0.1);
+}
+
+.container .profiles .profile:active {
+  background-color: rgba(218, 218, 218, 0.15);
+}
+
+.container .profiles .profile img {
+  border-radius: 15px;
+}
+
+.container .profiles .profile h3 {
+  text-align: center;
+  color: var(--color-white);
+  font-size: 1.5rem;
+  margin-top: 0.8rem;
+  overflow: auto;
+}
+
+.container .profiles .add-profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container .profiles .add-profile span {
+  margin: 60px 0;
+}
+
+.container .edit-profiles {
+  background-color: #008dfc;
+  border-radius: 10px;
+  padding: 15px 0;
+  color: var(--color-white);
+  margin-top: 30px;
+  width: 250px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.container .edit-profiles:hover {
+  background-color: #008ffcd5;
+}
+
+.container .edit-profiles:active {
+  background-color: #008dfc;
+}
+
+.hidden {
+  display: none;
+}
+
+.go-back-btn {
+  border: 1px #fff solid;
+  padding: 7px 0;
+  width: 200px;
+  border-radius: 10px;
+  text-align: center;
+  color: var(--color-white);
+  font-size: 24px;
+  margin-top: 20px;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/edit-profile.css" />
+    <link rel="stylesheet" href="../index/css/icons.css" />
+    <script async src="./js/edit.js"></script>
+    <title>Edit Profile</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="main-header">Edit Profile</h1>
+      <form action="./index.html">
+        <div action="./index.html" class="profile-box">
+          <div class="left-side-profile">
+            <div>
+              <img
+                class="profile-img"
+                src="./assets/randomProfilePicture.jpg"
+                alt="randomPhoto"
+              />
+              <h4 class="profile-name">Lorem</h4>
+            </div>
+          </div>
+          <div class="right-side-profile">
+            <div>
+              <div class="profile-settings">
+                <label for="language">Language:</label>
+                <select id="language" name="language">
+                  <option value="english">English</option>
+                  <option value="russian">Russian</option>
+                  <option value="italian">Italian</option>
+                </select>
+              </div>
+              <div class="profile-settings">
+                <label>Profile lock:</label>
+                <div class="lock-box">
+                  <button
+                    type="button"
+                    id="profileLock"
+                    class="private-profile-btn"
+                  >
+                    ON
+                  </button>
+                  <span id="lockIcon" class="icon icon-lock"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer">
+          <div class="btn-group">
+            <button type="submit" class="btn">Done</button>
+            <a href="./index.html" class="btn">Cancel</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

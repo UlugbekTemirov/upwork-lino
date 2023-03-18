@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/add-profile.css" />
+    <script async src="./js/add.js"></script>
+    <title>Add Profile</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="add-profiles-header">Add Profiles</h1>
+      <p class="add-profiles-desc">Add a profile for watching</p>
+      <form action="./index.html" class="profiles-row">
+        <div class="profile-img">
+          <div>
+            <div class="relative">
+              <img
+                id="profileAvatar"
+                class="profile-avatar"
+                src="./assets/randomProfilePicture.jpg"
+                alt="randomUser"
+              />
+              <label for="avatar" class="edit-layer">
+                <span class="icon icon-edit"></span>
+              </input>
+              <input name="avatar" id="avatar" class="hidden" type="file">
+            </div>
+            <h4 id="profileName" class="profile-name">Your Name</h4>
+          </div>
+        </div>
+        <div class="profile-info">
+          <div class="info-row">
+            <input
+              class="profile-name-input"
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Profile name..."
+              required
+            />
+            <div class="kid-box">
+              <input
+                name="iskid"
+                class="kid-checkbox"
+                id="kid"
+                type="checkbox"
+              />
+              <label class="kid-label" for="kid">
+                <span class="icon icon-checked"></span>
+              </label>
+              <label class="checkbox-label" for="kid">Kid?</label>
+            </div>
+          </div>
+          <div class="btn-group">
+            <button type="submit" id="saveBtn" class="btn btn-save">
+              Save
+            </button>
+            <a href="./index.html" type="button" id="cancelBtn" class="btn btn-cancel">
+              Cancel
+            </a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

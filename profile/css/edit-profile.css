@@ -1,0 +1,123 @@
+@import "../../index/style.css";
+
+.container {
+  padding-top: 50px;
+}
+
+.main-header {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.profile-box {
+  display: flex;
+  margin-top: 40px;
+}
+
+.profile-box .left-side-profile {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-box .left-side-profile .profile-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+}
+
+.profile-box .left-side-profile .profile-name {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 28px;
+}
+
+.profile-box .right-side-profile {
+  width: 60%;
+}
+
+.profile-settings {
+  margin-top: 25px;
+}
+
+.profile-settings label {
+  display: block;
+  text-transform: uppercase;
+  font-size: 28px;
+  font-weight: 800;
+}
+.profile-settings select {
+  background-color: transparent;
+  color: var(--color-white);
+  font-weight: 600;
+  font-size: 28px;
+  padding: 7px 20px;
+  border: 1px white solid;
+  margin-top: 10px;
+}
+
+.profile-settings .private-profile-btn {
+  text-transform: uppercase;
+  border: 1px white solid;
+  color: var(--color-white);
+  font-size: 28px;
+  font-weight: 600;
+  width: 150px;
+  padding: 5px 0;
+}
+.profile-settings .icon {
+  margin-left: 15px;
+  width: 30px;
+  height: 30px;
+}
+
+.lock-box {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.footer {
+  border-top: 2px #fff solid;
+  width: 60%;
+  margin-top: 50px;
+  padding-top: 30px;
+}
+
+.btn-group {
+  display: flex;
+  gap: 40px;
+}
+
+.btn {
+  color: var(--color-white);
+  font-size: 24px;
+  padding: 10px 0px;
+  border: 1px #fff solid;
+  width: 140px;
+}
+
+@media screen and (max-width: 800px) {
+  .profile-box {
+    display: block;
+  }
+  .profile-box .left-side-profile,
+  .profile-box .right-side-profile {
+    width: 100%;
+  }
+
+  .profile-box .right-side-profile {
+    display: flex;
+    justify-content: center;
+  }
+
+  .footer {
+    width: 90%;
+    margin: 40px auto;
+    display: flex;
+    justify-content: center;
+  }
+  .container {
+    padding: 20px 0;
+  }
+}

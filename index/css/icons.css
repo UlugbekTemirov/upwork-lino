@@ -1,0 +1,52 @@
+.icon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  mask-repeat: no-repeat;
+  mask-size: 100%;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100%;
+  -webkit-mask-position: center;
+  vertical-align: middle;
+  background-color: #b8b8b8;
+}
+
+.icon-pencil {
+  mask-image: url(../assets/icons/pencil.png);
+  -webkit-mask-image: url(../assets/icons/pencil.png);
+}
+
+.icon-user {
+  mask-image: url(../assets/icons/user.png);
+  -webkit-mask-image: url(../assets/icons/user.png);
+}
+
+.icon-question {
+  mask-image: url(../assets/icons/question.png);
+  -webkit-mask-image: url(../assets/icons/question.png);
+}
+
+.icon-more {
+  width: 70px;
+  height: 70px;
+  background-color: white;
+  mask-image: url(../assets/icons/more.png);
+  -webkit-mask-image: url(../assets/icons/more.png);
+}
+
+.icon-lock {
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  mask-image: url(../assets/icons/lock.png);
+  -webkit-mask-image: url(../assets/icons/lock.png);
+}
+
+.icon-unlock {
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  mask-image: url(../assets/icons/padlock-unlock.png);
+  -webkit-mask-image: url(../assets/icons/padlock-unlock.png);
+}

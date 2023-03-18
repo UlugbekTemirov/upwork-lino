@@ -1,0 +1,82 @@
+.container {
+  width: 100%;
+  text-align: center;
+  margin-top: -185px;
+}
+
+.circle {
+  stroke: #0000ff;
+  stroke-dasharray: 650;
+  stroke-dashoffset: 650;
+  -webkit-transition: all 0.5s ease-in-out;
+  opacity: 0.3;
+  stroke-width:10;
+  r:93.3; 
+}
+
+.playBut {
+  /*  border: 1px solid red;*/
+  display: inline-block;
+  -webkit-transition: all 0.5s ease;
+}
+.playBut .triangle {
+  -webkit-transition: all 0.7s ease-in-out;
+  stroke-dasharray: 260;
+  stroke-dashoffset: 520;
+  stroke: #00ff00;
+  stroke-width:13
+  ;
+  transform: translateY(0);
+}
+.playBut:hover .triangle {
+  stroke-dashoffset: 0;
+  opacity: 1;
+  stroke: #ff0000;
+  animation: nudge 0.7s ease-in-out;
+}
+
+.playBut:hover .triangle {
+  stroke-dashoffset: 0;
+  opacity: 1;
+  stroke: #ff0000;
+  
+  animation: nudge 0.7s ease-in-out;
+}
+
+.playBut:focus .triangle{
+  stroke-dashoffset: 0;
+  opacity: 1;
+  stroke: #0000ff;
+  stroke-width:14;
+  animation: nudge 0.7s ease-in-out;
+  transition:-2s;
+ 
+}
+.stroke-solid{
+ height:5px;
+	
+}
+
+
+
+@keyframes nudge {
+  0% {
+    transform: translateX(0);
+  }
+  30% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  70% {
+    transform: translateX(-2px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.playBut:hover .circle {
+  stroke-dashoffset: 0;
+  opacity: 1;
+}

@@ -1,0 +1,60 @@
+.change-name-form {
+  border: 2px solid white;
+  width: 60%;
+  margin: 100px auto;
+  border-radius: 10px;
+  padding: 20px 50px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.input-group label {
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.input-group input {
+  border-radius: 15px;
+  border: 2px solid #fff;
+  padding: 10px 20px;
+  font-size: 24px;
+  margin-top: 10px;
+  background-color: transparent;
+  color: #fff;
+  outline: none;
+  font-weight: 600;
+}
+
+.btn-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.btn {
+  padding: 10px 0;
+  width: 200px;
+  text-align: center;
+  font-size: 20px;
+  border: 2px solid #fff;
+  border-radius: 15px;
+  color: #fff;
+}
+
+.btn-save {
+  color: lime;
+  border-color: lime;
+}
+
+.btn-save:hover {
+  background-color: rgba(0, 255, 0, 0.25);
+  color: #fff;
+}
+
+.btn-cancel:hover {
+  background-color: #ffffff33;
+}
