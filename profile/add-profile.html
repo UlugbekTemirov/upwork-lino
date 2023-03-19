@@ -7,12 +7,13 @@
     <link rel="stylesheet" href="./css/add-profile.css" />
     <script async src="./js/add.js"></script>
     <title>Add Profile</title>
+    
   </head>
   <body>
     <div class="container">
       <h1 class="add-profiles-header">Add Profiles</h1>
       <p class="add-profiles-desc">Add a profile for watching</p>
-      <form action="./index.html" class="profiles-row">
+      <form id="addProfileForm"  class="profiles-row">
         <div class="profile-img">
           <div>
             <div class="relative">
@@ -54,7 +55,7 @@
             </div>
           </div>
           <div class="btn-group">
-            <button type="submit" id="saveBtn" class="btn btn-save">
+            <button type="submit" class="btn btn-save">
               Save
             </button>
             <a href="./index.html" type="button" id="cancelBtn" class="btn btn-cancel">
@@ -65,4 +66,7 @@
       </form>
     </div>
   </body>
+  <script>
+      if (localStorage.getItem("is_authenticated") !== "true") window.location.href = "/"
+    </script>
 </html>

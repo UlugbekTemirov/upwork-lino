@@ -80,3 +80,43 @@ logout.addEventListener("click", () => {
   localStorage.removeItem("is_authenticated");
   window.location.reload();
 });
+
+const avatar = document.getElementById("avatar");
+const username = document.getElementById("username");
+
+function setUsernameAndAva() {
+  const profile = JSON.parse(localStorage.getItem("profiles"));
+  let id = window.location.search.slice(11);
+  const data = profile.filter((item) => item.id == id)[0];
+  avatar.setAttribute("src", data?.image);
+  username.innerText = data?.username;
+}
+
+setUsernameAndAva();
+
+const listProfiles = document.getElementById("listProfiles");
+
+function profileButtons(profile) {
+  console.log(profile);
+  return `<button onclick=redirect(${profile.id}) class="dropdownProfile">
+  <img
+    id="avatar"
+    src=${profile.image}
+    alt="random"
+  />
+  <h4 id="username">${profile.username}</h4>
+</button>`;
+}
+
+function redirect(id) {
+  window.location.href = `/?profileid=${id}`;
+}
+
+function setDropdownProfiles() {
+  const profiles = JSON.parse(localStorage.getItem("profiles"));
+  profiles.forEach(
+    (profile) => (listProfiles.innerHTML += profileButtons(profile))
+  );
+}
+
+setDropdownProfiles();

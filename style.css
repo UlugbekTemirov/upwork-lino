@@ -313,6 +313,29 @@ video {
   width: 200px;
 }
 
+.dropdownProfile {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.dropdownProfile:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dropdownProfile img {
+  width: 35px;
+  height: 35px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+.dropdownProfile h4 {
+  color: white;
+}
+
 .profile-items {
   padding: 15px;
 }
@@ -321,6 +344,10 @@ video {
   margin: 14px 0;
   display: flex;
   align-items: center;
+}
+
+.pb-0 {
+  padding-bottom: 0;
 }
 
 .profile-items a {

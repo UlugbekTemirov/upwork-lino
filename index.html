@@ -238,12 +238,14 @@
           <button id="user-profile" class="user-profile-box">
             <img
               class="user-profile"
+              id="avatar"
               src="./assets/random-user.jpeg"
               alt="random-user"
             />
-            <p>John Doe</p>
+            <p id="username">John Doe</p>
           </button>
           <div class="profile-dropdown hidden">
+            <ul id="listProfiles" class="profile-items pb-0"></ul>
             <ul class="profile-items">
               <li>
                 <a href="../profile/index.html"
@@ -333,4 +335,12 @@
     <br />
     <br />
   </body>
+  <script>
+    if (
+      !window.location.search.includes("profileid") &&
+      localStorage.getItem("is_authenticated") === "true"
+    ) {
+      window.location.href = "/?profileid=0";
+    }
+  </script>
 </html>

@@ -12,16 +12,22 @@
   <body>
     <div class="container">
       <h1 class="main-header">Edit Profile</h1>
-      <form action="./index.html">
+      <form id="editProfileForm" action="./index.html">
         <div action="./index.html" class="profile-box">
           <div class="left-side-profile">
             <div>
-              <img
-                class="profile-img"
-                src="./assets/randomProfilePicture.jpg"
-                alt="randomPhoto"
+              <label for="profileAvatar" id="avatar" class="profile-img"
+                ><div>
+                  <span class="icon icon-editable"></span>
+                </div>
+              </label>
+              <input
+                id="profileAvatar"
+                type="file"
+                accept=".png,.jpg,.jpeg"
+                class="hidden"
               />
-              <h4 class="profile-name">Lorem</h4>
+              <h4 id="username" class="profile-name">Lorem</h4>
             </div>
           </div>
           <div class="right-side-profile">
@@ -35,28 +41,23 @@
                 </select>
               </div>
               <div class="profile-settings">
-                <label>Profile lock:</label>
-                <div class="lock-box">
-                  <button
-                    type="button"
-                    id="profileLock"
-                    class="private-profile-btn"
-                  >
-                    ON
-                  </button>
-                  <span id="lockIcon" class="icon icon-lock"></span>
-                </div>
+                <label>Username:</label>
+                <input required type="text" id="usernameInput" />
               </div>
             </div>
           </div>
         </div>
         <div class="footer">
           <div class="btn-group">
-            <button type="submit" class="btn">Done</button>
+            <button id="done" type="submit" class="btn">Done</button>
             <a href="./index.html" class="btn">Cancel</a>
           </div>
         </div>
       </form>
     </div>
   </body>
+  <script>
+    if (localStorage.getItem("is_authenticated") !== "true")
+      window.location.href = "/";
+  </script>
 </html>

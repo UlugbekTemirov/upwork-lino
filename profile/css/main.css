@@ -43,7 +43,7 @@
   border-radius: 15px;
   background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(2px);
-  z-index: 2;
+  z-index: 10;
 }
 
 .container .profiles .profile .edit-profile .icon-pencil {
@@ -62,6 +62,8 @@
 
 .container .profiles .profile img {
   border-radius: 15px;
+  height: 190px;
+  width: 100%;
 }
 
 .container .profiles .profile h3 {
@@ -104,7 +106,7 @@
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .go-back-btn {

@@ -14,31 +14,7 @@
       <h1 class="profile-header">Screen to watch</h1>
 
       <div class="profiles">
-        <button id="profile" class="profile">
-          <img src="./assets/randomProfilePicture.jpg" alt="randomUser" />
-          <h3>Lorem</h3>
-          <span id="lock" class="icon icon-lock"></span>
-        </button>
-        <button id="profile" class="profile">
-          <img src="./assets/randomProfilePicture.jpg" alt="randomUser" />
-          <h3>Lorem</h3>
-        </button>
-        <button id="profile" class="profile">
-          <img src="./assets/randomProfilePicture.jpg" alt="randomUser" />
-          <h3>Lorem</h3>
-        </button>
-        <button id="profile" class="profile">
-          <img src="./assets/randomProfilePicture.jpg" alt="randomUser" />
-          <h3>Lorem</h3>
-        </button>
-        <a
-          href="./add-profile.html"
-          id="addProfile"
-          class="profile add-profile"
-        >
-          <span class="icon icon-more"></span>
-          <h3>Add Profile</h3>
-        </a>
+        <!-- Profiles -->
       </div>
 
       <button id="editProfile" class="edit-profiles">Edit Profiles</button>
@@ -46,4 +22,8 @@
       <a href="../index.html" class="go-back-btn" type="button">Go Back</a>
     </div>
   </body>
+  <script>
+    if (localStorage.getItem("is_authenticated") !== "true")
+      window.location.href = "/";
+  </script>
 </html>
