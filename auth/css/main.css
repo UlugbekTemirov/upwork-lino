@@ -524,6 +524,87 @@ iframe {
   background-color: #333333;
 }
 
+.main-bg {
+  height: 100%;
+  background: url(../images/movies.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 2;
+}
+
+.container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  height: 100%;
+  max-width: 95rem;
+  margin: 0 auto;
+}
+.background-dark {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.7413165949973739) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  z-index: -1;
+  width: 50%;
+  height: 100%;
+}
+
+.info-tab {
+  color: white;
+  max-width: 600px;
+}
+
+.info-tab .header-text {
+  color: white;
+  font-weight: 900;
+  font-size: 50px;
+}
+
+.info-tab .information-p {
+  color: white;
+  font-size: 18px;
+  margin: 15px 0;
+  font-weight: 100;
+}
+
+.btn-group {
+  margin-top: 50px;
+}
+
+.info-tab .btn {
+  font-size: 24px;
+  color: white;
+  background-color: #0066ff;
+  padding: 12px 0;
+  width: 300px;
+}
+
+.line-through {
+  width: 300px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.line-through .line {
+  width: 100%;
+  height: 2px;
+  background-color: #ccc;
+}
+
+.line-through .or {
+  padding: 0 10px;
+}
+
 /*//////////////////////////////////////////////////////////////////
 [ Responsive ]*/
 

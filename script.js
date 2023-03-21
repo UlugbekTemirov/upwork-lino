@@ -97,7 +97,6 @@ setUsernameAndAva();
 const listProfiles = document.getElementById("listProfiles");
 
 function profileButtons(profile) {
-  console.log(profile);
   return `<button onclick=redirect(${profile.id}) class="dropdownProfile">
   <img
     id="avatar"
@@ -120,3 +119,20 @@ function setDropdownProfiles() {
 }
 
 setDropdownProfiles();
+
+let DUMMY_DATA = [
+  {
+    id: 0,
+    username: "Lorem",
+    image: "./assets/randomProfilePicture.jpg",
+  },
+];
+
+function setLocalProfiles() {
+  if (!localStorage.getItem("profiles")) {
+    localStorage.setItem("profiles", JSON.stringify(DUMMY_DATA));
+  } else {
+    DUMMY_DATA = JSON.parse(localStorage.getItem("profiles"));
+  }
+}
+setLocalProfiles();
