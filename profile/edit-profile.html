@@ -11,16 +11,47 @@
   </head>
   <body>
     <div class="container">
+      <div id="slider" class="slider-modal">
+        <div class="slider-row">
+          <img
+            class="hidden"
+            id="avatars"
+            src="./assets/avatars.jpeg"
+            alt="avatars"
+          />
+          <canvas id="sliderCanvas" width="300" height="300"></canvas>
+          <div class="btn-group">
+            <button type="button" id="generate" class="btn btn-generate">
+              generate
+            </button>
+            <button type="button" id="set" class="btn btn-generate">
+              done
+            </button>
+          </div>
+          <div class="info-center">
+            <span class="icon icon-arrows"></span>
+            <h4>Use Arrows to center the avatar</h4>
+          </div>
+        </div>
+        <span class="exit-btn" id="exit">X</span>
+      </div>
+
       <h1 class="main-header">Edit Profile</h1>
       <form id="editProfileForm" action="./index.html">
         <div action="./index.html" class="profile-box">
           <div class="left-side-profile">
             <div>
-              <label for="profileAvatar" id="avatar" class="profile-img"
+              <div class="img-box">
+                <img class="profile-img" id="avatar" src="" alt="" />
+                <span class="badge"
+                  ><span class="icon icon-pencil"></span> change ava</span
+                >
+              </div>
+              <!-- <label for="profileAvatar" id="avatar" class="profile-img"
                 ><div>
                   <span class="icon icon-editable"></span>
                 </div>
-              </label>
+              </label> -->
               <input
                 id="profileAvatar"
                 type="file"
@@ -43,6 +74,14 @@
               <div class="profile-settings">
                 <label>Username:</label>
                 <input required type="text" id="usernameInput" />
+              </div>
+              <div class="btn-group btn-upload-group">
+                <label for="profileAvatar" class="btn btn-upload"
+                  >Upload img</label
+                >
+                <button type="button" class="btn btn-upload" id="galery">
+                  Galery img
+                </button>
               </div>
             </div>
           </div>

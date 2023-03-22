@@ -16,9 +16,9 @@ function changeFile() {
   const file = this.files[0];
   const reader = new FileReader();
 
-  const maxFileSize = 1024 * 1024; // 1 MB
+  const maxFileSize = 1024 ** 2 * 2; // 1 MB
   if (file && file.size > maxFileSize) {
-    alert("File size exceeds maximum limit of 1 MB");
+    alert("File size exceeds maximum limit of 2 MB");
     profileAvatar.value = ""; // clear the input
   } else {
     reader.addEventListener("load", function () {

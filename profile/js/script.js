@@ -72,7 +72,6 @@ editProfile.addEventListener("click", () => {
   done.style.display = "block";
 
   const profiles = document.querySelectorAll("#profile");
-  console.log(profiles);
 
   for (let i = 0; i < profiles.length; i++) {
     editProfileBox(profiles[i], "append", i);
@@ -85,7 +84,6 @@ done.addEventListener("click", () => {
   done.style.display = "none";
 
   const profiles = document.querySelectorAll("#profile");
-  console.log(profiles);
 
   for (let i = 0; i < profiles.length; i++) {
     editProfileBox(profiles[i], "remove");
