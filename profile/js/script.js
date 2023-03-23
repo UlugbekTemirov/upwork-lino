@@ -30,7 +30,6 @@ function clickedProfile(id) {
   localStorage.setItem("currentProfile", JSON.stringify(profile));
 
   const cond = edit?.getAttribute("data-cond") ?? "remove";
-  console.log(cond);
   if (cond === "remove") window.location.href = `/?profileid=${profile.id}`;
 }
 
