@@ -23,11 +23,12 @@ function setLocalProfiles() {
 setLocalProfiles();
 
 function clickedProfile(id) {
+  console.log("I am working");
   const profile = DUMMY_DATA.filter((profile) => profile.id === id)[0];
-  localStorage.removeItem("currentProfile");
   localStorage.setItem("currentProfile", JSON.stringify(profile));
 
-  if (!edit) window.location.href = `/?profileid=${profile.id}`;
+  const disabled = edit.getAttribute("disabled");
+  if (disabled) window.location.href = `/?profileid=${profile.id}`;
 }
 
 function profileButtons({ id, username, image }) {
@@ -67,6 +68,7 @@ checkProfilesNumber();
 
 // Open Edit box when editProfile button pressed
 done.style.display = "none";
+
 editProfile.addEventListener("click", () => {
   editProfile.style.display = "none";
   done.style.display = "block";
@@ -99,14 +101,17 @@ function editProfileBox(parent, option, id) {
   button.classList.add("edit-profile");
   button.setAttribute("id", "edit");
   button.append(span);
-  button.setAttribute("onclick", `redirect(${id})`);
+  const profiles = JSON.parse(localStorage.getItem("profiles"));
+  button.setAttribute("onclick", `redirect(${profiles[id]?.id})`);
 
   if (option === "append") {
+    button.setAttribute("disabled", false);
     parent.appendChild(button);
   }
   if (option === "remove") {
-    const edit = document.getElementById("edit");
+    edit = document.getElementById("edit");
     parent.removeChild(edit);
+    edit.setAttribute("disabled", true);
   }
 }
 
