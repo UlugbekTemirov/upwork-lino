@@ -6,10 +6,16 @@ const usernameInput = document.getElementById("usernameInput");
 const editProfileForm = document.getElementById("editProfileForm");
 const profileAvatar = document.getElementById("profileAvatar");
 
+// Get all profiles from local storage
 let profiles = JSON.parse(localStorage.getItem("profiles"));
+
+// Get Editable Profile id from URL search Params
 const id = window.location.search.slice(11);
+
+// Find current profile with ID
 const targetProfile = profiles.filter((item) => item.id == id)[0];
 
+// Handle input and append in HTML
 usernameInput?.addEventListener("input", (e) => {
   if (!e.target.value) username.innerText = "Profile Name";
   else {
@@ -18,6 +24,7 @@ usernameInput?.addEventListener("input", (e) => {
   }
 });
 
+// Append Current Profile datas in UI
 function setDatas(profile) {
   avatar.setAttribute("src", profile.image);
   username.innerText = profile.username;
@@ -25,6 +32,7 @@ function setDatas(profile) {
 }
 setDatas(targetProfile);
 
+// Check input file size and append in UI
 function changeFile() {
   const file = this.files[0];
   const reader = new FileReader();
@@ -42,8 +50,11 @@ function changeFile() {
 
   reader.readAsDataURL(file);
 }
+
+// Handle changes of profile avatar
 profileAvatar.addEventListener("change", changeFile);
 
+// Submit all changes to global profile Object and set it in Local Storage
 editProfileForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const newProfiles = profiles.filter(
@@ -54,9 +65,10 @@ editProfileForm.addEventListener("submit", (e) => {
   window.location.href = "/profile";
 });
 
+//
 profileAvatar.addEventListener("change", () => {
   if (file && file.size > maxFileSize) {
-    alert("File size exceeds maximum limit of 1 MB");
+    alert("File size exceeds maximum limit of 2 MB");
     profileAvatar.value = ""; // clear the input
   }
 });

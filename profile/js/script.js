@@ -1,10 +1,11 @@
 const profiles = document.querySelectorAll("#profile");
-let addProfile = document.getElementById("addProfile");
 const profilesDiv = document.querySelector(".profiles");
 const editProfile = document.getElementById("editProfile");
 const done = document.getElementById("done");
+let addProfile = document.getElementById("addProfile");
 let edit = document.getElementById("edit");
 
+// Use DUMMY DATA to initialize first profile when user signs in
 let DUMMY_DATA = [
   {
     id: 0,
@@ -13,6 +14,7 @@ let DUMMY_DATA = [
   },
 ];
 
+// Set DUMMY DATA profiles to Local Storage (To store all user data, Local storage is used as main storage)
 function setLocalProfiles() {
   if (!localStorage.getItem("profiles")) {
     localStorage.setItem("profiles", JSON.stringify(DUMMY_DATA));
@@ -22,15 +24,17 @@ function setLocalProfiles() {
 }
 setLocalProfiles();
 
+// Redirect to clicked profile's account and Set as current profile to Local Storage
 function clickedProfile(id) {
-  console.log("I am working");
   const profile = DUMMY_DATA.filter((profile) => profile.id === id)[0];
   localStorage.setItem("currentProfile", JSON.stringify(profile));
 
-  const disabled = edit.getAttribute("disabled");
-  if (disabled) window.location.href = `/?profileid=${profile.id}`;
+  const cond = edit?.getAttribute("data-cond") ?? "remove";
+  console.log(cond);
+  if (cond === "remove") window.location.href = `/?profileid=${profile.id}`;
 }
 
+// Create UI of profile account buttons in HTML
 function profileButtons({ id, username, image }) {
   return `<button onclick="clickedProfile(${id})" id="profile" class="profile">
   <img src=${image} alt=${username} />
@@ -38,13 +42,12 @@ function profileButtons({ id, username, image }) {
 </button>`;
 }
 
+// Make Row of Profiles UI
 function makeProfileRow(data) {
   for (let i = 0; i < data.length; i++) {
     profilesDiv.innerHTML += profileButtons({ ...data[i] });
   }
-  // console.log(addProfile);
 }
-
 makeProfileRow(DUMMY_DATA);
 
 // To check if user profiles are more than 5 or not. If so disable AddProfile Button
@@ -69,6 +72,7 @@ checkProfilesNumber();
 // Open Edit box when editProfile button pressed
 done.style.display = "none";
 
+// Add edit profile button inside of Profile buttons
 editProfile.addEventListener("click", () => {
   editProfile.style.display = "none";
   done.style.display = "block";
@@ -81,6 +85,7 @@ editProfile.addEventListener("click", () => {
   edit = document.getElementById("edit");
 });
 
+// Remove edit profile button from profile buttons
 done.addEventListener("click", () => {
   editProfile.style.display = "block";
   done.style.display = "none";
@@ -92,7 +97,7 @@ done.addEventListener("click", () => {
   }
 });
 
-// Create Edit Button
+// Create Edit Button UI and "append", "remove" methods
 function editProfileBox(parent, option, id) {
   const button = document.createElement("button");
   const span = document.createElement("span");
@@ -105,16 +110,17 @@ function editProfileBox(parent, option, id) {
   button.setAttribute("onclick", `redirect(${profiles[id]?.id})`);
 
   if (option === "append") {
-    button.setAttribute("disabled", false);
+    button.setAttribute("data-cond", "append");
     parent.appendChild(button);
   }
   if (option === "remove") {
     edit = document.getElementById("edit");
     parent.removeChild(edit);
-    edit.setAttribute("disabled", true);
+    edit.setAttribute("data-cond", "remove");
   }
 }
 
+// Redirect clicked profile to edit-profile.html for editing
 function redirect(id) {
   window.location.href = `./edit-profile.html?profileid=${id}`;
 }
