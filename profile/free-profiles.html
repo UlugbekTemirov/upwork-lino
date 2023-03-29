@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="../css/icons.css" />
+    <script async src="./js/script.js"></script>
+    <title>User Profile</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="profile-header">Free Profiles</h1>
+
+      <div class="profiles">
+        <!-- Profiles -->
+      </div>
+
+      <button id="editProfile" class="edit-profiles">Edit Profiles</button>
+      <button id="done" class="edit-profiles">Done</button>
+      <a href="../index.html" class="go-back-btn" type="button">Go Back</a>
+    </div>
+  </body>
+  <script>
+    if (localStorage.getItem("is_authenticated") !== "true")
+      window.location.href = "/";
+  </script>
+</html>

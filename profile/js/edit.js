@@ -65,69 +65,15 @@ editProfileForm.addEventListener("submit", (e) => {
   window.location.href = "/profile";
 });
 
-//
 profileAvatar.addEventListener("change", () => {
   if (file && file.size > maxFileSize) {
     alert("File size exceeds maximum limit of 2 MB");
     profileAvatar.value = ""; // clear the input
   }
 });
-// 52 - 290 - width
-// 10 - 330 - height
+
 // galery
 const galery = document.getElementById("galery");
-const generate = document.getElementById("generate");
-const set = document.getElementById("set");
-const slider = document.getElementById("slider");
-
-let winit = -110;
-let hinit = -30;
-
-let wdim = winit;
-let hdim = hinit;
-
-let ih = 363;
-let iw = 363;
-
-const img = document.getElementById("avatars");
-const canvas = document.getElementById("sliderCanvas");
-const ctx = canvas.getContext("2d");
-
-function imgchange(wdim, hdim) {
-  ctx.drawImage(img, wdim, hdim, 20000, 12000);
-}
-
-img.onload = function () {
-  ctx.drawImage(img, wdim, hdim, 20000, 12000);
-};
-
-function random(max) {
-  return -Math.round(Math.random() * max);
-}
-
-function generateHandler() {
-  wdim = iw * random(10) + winit;
-  hdim = ih * random(10) + hinit;
-  imgchange(wdim, hdim);
-}
-
-generate.addEventListener("click", generateHandler);
-
-document.addEventListener("keydown", (e) => {
-  if (e.keyCode === 37) {
-    wdim -= 1;
-  }
-  if (e.keyCode === 39) {
-    wdim += 1;
-  }
-  if (e.keyCode === 40) {
-    hdim += 1;
-  }
-  if (e.keyCode === 38) {
-    hdim -= 1;
-  }
-  imgchange(wdim, hdim);
-});
 
 const exit = document.getElementById("exit");
 slider.style.display = "none";
@@ -140,8 +86,45 @@ galery.addEventListener("click", () => {
   slider.style.display = "block";
 });
 
-set.addEventListener("click", () => {
-  targetProfile.image = canvas.toDataURL();
-  avatar.setAttribute("src", canvas.toDataURL());
-  slider.style.display = "none";
-});
+// mosaic slider
+
+const c = document.querySelector("#container");
+
+function sliderLayout(id) {
+  return `
+  <div class="thumb">
+    <div onclick="setAvatar(${id})" class="content">
+      <img src="./assets/profilePictures/${id}.png" alt="avatar" />
+    </div>
+  </div>
+  `;
+}
+
+for (let i = 1; i <= 10; i++) {
+  c.innerHTML += sliderLayout(i);
+}
+
+function setAvatar(id) {
+  const image = new Image();
+  image.src = `./assets/profilePictures/${id}.png`;
+
+  image.addEventListener("load", () => {
+    const canvas = document.createElement("canvas");
+    canvas.width = image.width;
+    canvas.height = image.height;
+    const context = canvas.getContext("2d");
+    context.drawImage(image, 0, 0, canvas.width, canvas.height);
+
+    // Get the canvas data as a Blob object
+    canvas.toBlob(function (blob) {
+      const reader = new FileReader();
+      reader.readAsDataURL(blob);
+      reader.onloadend = function () {
+        const base64data = reader.result;
+        targetProfile.image = base64data;
+        avatar.setAttribute("src", base64data);
+        slider.style.display = "none";
+      };
+    }, "image/png");
+  });
+}

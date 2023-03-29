@@ -13,25 +13,20 @@
     <div class="container">
       <div id="slider" class="slider-modal">
         <div class="slider-row">
-          <img
-            class="hidden"
-            id="avatars"
-            src="./assets/avatars.jpeg"
-            alt="avatars"
-          />
-          <canvas id="sliderCanvas" width="300" height="300"></canvas>
-          <div class="btn-group">
-            <button type="button" id="generate" class="btn btn-generate">
-              generate
-            </button>
+          <!-- Slider -->
+          <div id="container">
+            <!-- slider items -->
+          </div>
+          <!-- end of slider -->
+          <!-- <div class="btn-group">
             <button type="button" id="set" class="btn btn-generate">
               done
             </button>
-          </div>
-          <div class="info-center">
+          </div> -->
+          <!-- <div class="info-center">
             <span class="icon icon-arrows"></span>
             <h4>Use Arrows to center the avatar</h4>
-          </div>
+          </div> -->
         </div>
         <span class="exit-btn" id="exit">X</span>
       </div>
@@ -64,14 +59,6 @@
           <div class="right-side-profile">
             <div>
               <div class="profile-settings">
-                <label for="language">Language:</label>
-                <select id="language" name="language">
-                  <option value="english">English</option>
-                  <option value="russian">Russian</option>
-                  <option value="italian">Italian</option>
-                </select>
-              </div>
-              <div class="profile-settings">
                 <label>Username:</label>
                 <input required type="text" id="usernameInput" />
               </div>
@@ -99,4 +86,5 @@
     if (localStorage.getItem("is_authenticated") !== "true")
       window.location.href = "/";
   </script>
+  <script async src="js/jquery.aptbox.min.js"></script>
 </html>

@@ -536,12 +536,13 @@ iframe {
 
 .container {
   display: flex;
-  justify-content: start;
+  justify-content: space-around;
   align-items: center;
   height: 100%;
   max-width: 95rem;
   margin: 0 auto;
 }
+
 .background-dark {
   position: absolute;
   left: 0;
@@ -555,6 +556,11 @@ iframe {
   z-index: -1;
   width: 50%;
   height: 100%;
+}
+
+.right-side .btn-group {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
 }
 
 .info-tab {
@@ -582,7 +588,7 @@ iframe {
 .info-tab .btn {
   font-size: 24px;
   color: white;
-  background-color: #0066ff;
+  background-color: #4600ff;
   padding: 12px 0;
   width: 300px;
 }
